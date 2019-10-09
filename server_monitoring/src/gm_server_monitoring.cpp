@@ -48,7 +48,7 @@ using namespace GarrysMod::Lua;
 		lastUserCPU = user;
 		lastSysCPU = sys;
 
-		return percent * 100;
+		return max(percent * 100, 0);
 	}
 	void InitGetCPUUsage() {
 		SYSTEM_INFO sysInfo;
@@ -75,6 +75,7 @@ using namespace GarrysMod::Lua;
 	#include "string.h"
 	#include "sys/times.h"
 	#include "sys/vtimes.h"
+	#include <algorithm>
 
 	int parseLine(char* line) {
 		int i = strlen(line);
@@ -132,8 +133,8 @@ using namespace GarrysMod::Lua;
 		lastCPU = now;
 		lastSysCPU = timeSample.tms_stime;
 		lastUserCPU = timeSample.tms_utime;
-
-		return percent;
+		
+		return std::max(percent, (double)0);
 	}
 	void InitGetCPUUsage() {
 		FILE* file;
