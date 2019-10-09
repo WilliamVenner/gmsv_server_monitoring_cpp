@@ -14,7 +14,6 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
@@ -30,3 +29,9 @@
 *.exe
 *.out
 *.app
+
+*.pdb
+*.exp
+
+server_monitoring/projects/windows/.vs
+server_monitoring/projects/windows/obj
