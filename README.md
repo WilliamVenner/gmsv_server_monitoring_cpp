@@ -15,4 +15,4 @@ local Is64Bit             = ServerMonitoring:Is64Bit()        -- true/false
 print(CPUUsage, TotalPhysicalMemory, PhysicalMemoryUsage, Is64Bit)
 ```
 
->33364553728 108796 0.10822510822511 false
+>0.10822510822511 33364553728 108796 false
