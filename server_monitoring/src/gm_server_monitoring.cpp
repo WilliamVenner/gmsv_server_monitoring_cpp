@@ -173,12 +173,6 @@ LUA_FUNCTION(ServerMonitoring_GetCPUUsage)
 	return 1;
 }
 
-LUA_FUNCTION(ServerMonitoring_Is64Bit)
-{
-	LUA->PushBool(sizeof(void*) >= 8);
-	return 1;
-}
-
 GMOD_MODULE_OPEN()
 {
 	LUA->PushSpecial(SPECIAL_GLOB);
@@ -195,10 +189,6 @@ GMOD_MODULE_OPEN()
 
 		LUA->PushString("GetCPUUsage");
 			LUA->PushCFunction(ServerMonitoring_GetCPUUsage);
-		LUA->SetTable(-3);
-
-		LUA->PushString("Is64Bit");
-			LUA->PushCFunction(ServerMonitoring_Is64Bit);
 		LUA->SetTable(-3);
 
 	LUA->SetField(-2, "ServerMonitoring");

@@ -10,12 +10,11 @@ if (ServerMonitoring == nil) then require("server_monitoring") end
 local CPUUsage            = ServerMonitoring:GetCPUUsage()    -- 0-100
 local TotalPhysicalMemory = ServerMonitoring:GetTotalMemory() -- bytes
 local PhysicalMemoryUsage = ServerMonitoring:GetMemoryUsage() -- bytes
-local Is64Bit             = ServerMonitoring:Is64Bit()        -- true/false
 
-print(CPUUsage, TotalPhysicalMemory, PhysicalMemoryUsage, Is64Bit)
+print(CPUUsage, TotalPhysicalMemory, PhysicalMemoryUsage)
 ```
 
->0.10822510822511 33364553728 108796 false
+>0.10822510822511 33364553728 108796
 
 ## Installation
 
