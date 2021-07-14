@@ -9,7 +9,7 @@ if (ServerMonitoring == nil) then require("server_monitoring") end
 
 local CPUUsage            = ServerMonitoring:GetCPUUsage()    -- 0-100
 local TotalPhysicalMemory = ServerMonitoring:GetTotalMemory() -- bytes
-local PhysicalMemoryUsage = ServerMonitoring:GetMemoryUsage() -- bytes
+local PhysicalMemoryUsage = ServerMonitoring:GetMemoryUsage() -- bytes (Windows), kilo-bytes (Linux)
 
 print(CPUUsage, TotalPhysicalMemory, PhysicalMemoryUsage)
 ```
